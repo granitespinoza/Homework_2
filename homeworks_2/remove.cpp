@@ -1,14 +1,14 @@
 /*
- eliminar un nodo de la lista enlazada en una posición específica
- lo primero que tenemos que hacer es verificar si la lista está vacía
- porque si está vacía no podemos eliminar nada
- luego si la posición es 0 eso significa que queremos eliminar el primer nodo
+ eliminar un nodo de la lista enlazada en una posicion especifica
+ lo primero que tenemos que hacer es verificar si la lista está vacia
+ porque si está vacia no podemos eliminar nada
+ luego si la posicion es 0 eso significa que queremos eliminar el primer nodo
  En este caso, simplemente hacemos que heada apunte al segundo nodo y eliminamos el primer nodo
 
- si la posición es cualquier otra, tenemos que recorrer la lista hasta llegar
+ si la posicion es cualquier otra, tenemos que recorrer la lista hasta llegar
  al nodo anterior al que queremos eliminar. Una vez que estamos en ese nodo
  hacemos que su puntero siguiente apunte al nodo después del que queremos eliminar
- y eliminamos el nodo en la posición indicada.
+ y eliminamos el nodo en la posicion indicada.
 
 
 
@@ -35,7 +35,7 @@ public:
         heada = NULL;
     }
 
-    //  para agregar al frente (para propósitos de prueba)
+    //  para agregar al frente (para propositos de prueba)
     void push_front(int valor) {
         Nodo* nuevo_nodo = new Nodo();
         nuevo_nodo->dato = valor;
@@ -43,7 +43,7 @@ public:
         heada = nuevo_nodo;
     }
 
-    //  para remover un nodo en cualquier posición
+    //  para remover un nodo en cualquier posicion
     void remove(int posicion) {
         if (heada == NULL) {
             cout << "La lista esta vacia, no hay nada que remover." << endl;
@@ -59,7 +59,7 @@ public:
 
 
         } else {
-            // Recorremos la lista hasta el nodo anterior al que queremos eliminar
+            // recorremos la lista hasta el nodo anterior al que queremos eliminar
             Nodo* temporal = heada;
             int contador = 0;
 
@@ -68,7 +68,7 @@ public:
                 contador++;
             }
 
-            // Si llegamos a una posición válida eliminamos el nodo
+            // si llegamos a una posicion válida eliminamos el nodo
             if (temporal != NULL && temporal->siguiente != NULL) {
                 Nodo* nodo_a_eliminar = temporal->siguiente;
                 temporal->siguiente = nodo_a_eliminar->siguiente;
